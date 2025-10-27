@@ -15,28 +15,36 @@
 		/>
 
 		<title>Frontend Mentor | Recipe page</title>
+		<!-- Style links -->
 		<link rel="stylesheet" href="./src/css/reset.css" />
 		<link rel="stylesheet" href="./src/css/style.css" />
 	</head>
 	<body>
-		<img
-			src="./src/assets/images/image-omelette.jpeg"
-			alt="Omelette on a serving dish"
-			class="hero-img"
-		/>
-		<div class="container">
-			<header>
-				<h1 class="h1">Simple Omelette Recipe</h1>
-				<p class="description">
-					An easy and quick dish, perfect for any meal. This classic
-					omelette combines beaten eggs cooked to perfection,
-					optionally filled with your choice of cheese, vegetables, or
-					meats.
-				</p>
+		<div class="content-container" role="document">
+			<header class="header" aria-labelledby="title" tabindex="0">
+				<img
+					src="./src/assets/images/image-omelette.jpeg"
+					alt="Omelette on a serving dish"
+					class="hero-img"
+				/>
+				<div class="header-text-area">
+					<h1 class="h1" id="title">Simple Omelette Recipe</h1>
+					<p class="description">
+						An easy and quick dish, perfect for any meal. This
+						classic omelette combines beaten eggs cooked to
+						perfection, optionally filled with your choice of
+						cheese, vegetables, or meats.
+					</p>
+				</div>
 			</header>
-			<main>
-				<section class="section prep-section">
-					<h2 class="prep-h2">Preparation time</h2>
+			<main class="main-content-area">
+				<section
+					class="section prep-section"
+					aria-labelledby="prep-h2"
+					role="region"
+					tabindex="0"
+				>
+					<h2 class="prep-h2" id="prep-h2">Preparation time</h2>
 					<ul class="ul">
 						<li class="li">
 							<div class="li-text">
@@ -58,8 +66,15 @@
 						</li>
 					</ul>
 				</section>
-				<section class="section">
-					<h2 class="h2 ingredients-h2">Ingredients</h2>
+				<section
+					class="section"
+					aria-labelledby="ingredients-h2"
+					role="region"
+					tabindex="0"
+				>
+					<h2 class="h2 ingredients-h2" id="ingredients-h2">
+						Ingredients
+					</h2>
 					<ul class="ul">
 						<li class="li">2-3 large eggs</li>
 						<li class="li">Salt, to taste</li>
@@ -72,8 +87,13 @@
 					</ul>
 				</section>
 				<hr class="hr" />
-				<section class="section">
-					<h2 class="h2">Instructions</h2>
+				<section
+					class="section"
+					aria-labelledby="ingredients-h2"
+					role="region"
+					tabindex="0"
+				>
+					<h2 class="h2" id="Instructions-h2">Instructions</h2>
 					<ol class="ol">
 						<li class="li">
 							<span class="bold">Beat the eggs:</span>
@@ -118,8 +138,13 @@
 					</ol>
 				</section>
 				<hr class="hr" />
-				<section class="section">
-					<h2 class="h2">Nutrition</h2>
+				<section
+					class="section nutrition-section"
+					aria-labelledby="nutrition-h2"
+					role="region"
+					tabindex="0"
+				>
+					<h2 class="h2" id="nutrition-h2">Nutrition</h2>
 					<p>
 						The table below shows nutritional values per serving
 						without the additional fillings.
@@ -146,17 +171,21 @@
 					</table>
 				</section>
 			</main>
-			<!-- <footer>
-        <div class="attribution">
-          Challenge by
-          <a
-            href="https://www.frontendmentor.io?ref=challenge"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Frontend Mentor</a
-          >. Coded by <a href="#">Your Name Here</a>.
-        </div>
-      </footer> -->
+			<footer>
+				<div class="attribution" tabindex="0">
+					Challenge by
+					<a
+						href="https://www.frontendmentor.io?ref=challenge"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Frontend Mentor</a
+					>. Coded by <a href="#">ayx</a>.
+				</div>
+			</footer>
 		</div>
+		<!-- <div class="content-container">
+			<div class="recipe-container">
+			</div>
+		</div> -->
 	</body>
 </html>

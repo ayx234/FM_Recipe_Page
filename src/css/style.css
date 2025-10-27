@@ -29,6 +29,9 @@
 	--brown-800: hsl(14, 45%, 36%);
 	--rose-800: hsl(332, 51%, 32%);
 	--rose-50: hsl(330, 100%, 98%);
+	/* My colors */
+	--stone-50: hsla(30, 75%, 95%, 0.25);
+	--rose-300: hsl(331, 84%, 93%);
 }
 
 body {
@@ -54,10 +57,7 @@ body {
 	font-size: 1.75rem; /* 28px */
 	color: var(--brown-800);
 	margin-block-end: 1.5rem; /* 24px */
-}
-
-.container {
-	margin: 2.5rem 2rem; /* 40px 32px */
+	font-weight: 400;
 }
 
 .section {
@@ -135,17 +135,37 @@ body {
 
 /* ----- Page parts ----- */
 
+.content-container {
+	background-color: var(--white);
+	position: relative;
+}
+
 .hero-img {
 	width: 100%;
 }
 
-/* Header */
+/* --- Header --- */
 
-.description {
-	margin: 0 -0.1875rem;
+/* .recipe-container {
+	margin: 2.5rem 2rem; 
+} */
+/* 40px 32px */
+
+.header-text-area {
+	margin: 2.5rem 2rem 0; /* 40px 32px 0 */
 }
 
-/* --- Preparation section */
+.description {
+	margin: 0 -0.1875rem; /* -1px */
+}
+
+/* --- Main --- */
+
+.main-content-area {
+	margin: 0 2rem 2.5rem; /* 40px 32px 0 */
+}
+
+/* Preparation section */
 .prep-section {
 	background-color: var(--rose-50);
 	padding: 1.25rem; /* 20px */
@@ -167,13 +187,133 @@ body {
 	margin-block-end: 1rem;
 }
 
-/* Instructions section */
+/* Nutrition-section */
+
+.nutrition-section {
+	overflow: hidden;
+}
 
 /* ----- Attribution ----- */
 .attribution {
-	font-size: 11px;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: -2rem;
+	font-size: 1rem;
 	text-align: center;
 }
 .attribution a {
-	color: hsl(228, 45%, 44%);
+	color: var(--brown-800);
+}
+
+/* ----- Selection and focus ----- */
+
+::selection {
+	background-color: var(--brown-800);
+	color: var(--white);
+}
+
+/* For Firefox support */
+::-moz-selection {
+	background-color: var(--brown-800);
+	color: var(--white);
+}
+
+.prep-section > *::selection {
+	background-color: var(--rose-800);
+	color: var(--white);
+}
+
+.prep-section *::-moz-selection {
+	background-color: var(--rose-800);
+	color: var(--white);
+}
+
+:focus {
+	outline: none; /* Remove default outline */
+	border: 0.1875rem solid var(--brown-800);
+	border-radius: 0.75rem;
+}
+
+/* :focus:not(.hero-img) {
+} */
+
+.header:focus,
+.section:focus {
+	padding: 1rem;
+	background-color: var(--stone-50);
+}
+
+.prep-section:focus {
+	border-color: var(--rose-800);
+	background-image: linear-gradient(var(--rose-300));
+}
+
+.attribution:focus,
+.attribution *:focus {
+	padding: 0.25rem;
+}
+
+/* ----- Desktop screens ----- */
+@media (min-width: 992px) {
+	body {
+		background-image: linear-gradient(var(--stone-100));
+	}
+
+	.content-container {
+		margin: 8rem 25%; /* 128px */
+		border-radius: 1.25rem; /* 20px */
+		padding: 2.5rem 2rem; /* 40px  32px */
+	}
+
+	.header-text-area,
+	.main-content-area {
+		margin-inline-start: 0;
+		margin-inline-end: 0;
+	}
+
+	.main-content-area {
+		margin-block-end: 0;
+	}
+
+	.section:last-child {
+		margin-block-end: 0;
+	}
+
+	.tr:last-child .td {
+		padding-block-end: 0;
+	}
+
+	/* --- Adjust sizing for content sections --- */
+	.hero-img {
+		border-radius: 0.75rem; /* 12px */
+	}
+
+	.h1 {
+		font-size: 2.375rem; /* 34.56px */
+	}
+
+	.prep-section {
+		padding-inline-start: 1.75rem; /* 28px */
+	}
+
+	.ul {
+		padding: 0.5rem; /* 8px */
+	}
+
+	.ul .li {
+		margin-block-start: 0.375rem; /* 6px */
+		margin-block-end: 0.375rem; /* 6px */
+	}
+
+	.ul .li::before {
+		left: -2rem; /* -32px */
+	}
+
+	/* Attribution */
+
+	.attribution {
+		bottom: -4rem;
+		font-size: 1.5rem;
+	}
 }
